@@ -3,7 +3,6 @@
 import { useState, Suspense, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import dynamic from 'next/dynamic';
 import {
   Select,
@@ -63,7 +62,7 @@ export function BuildingConfigurator() {
     return null;
   }
 
-  const updateConfig = (key, value) => {
+  const updateConfig = (key: keyof typeof config, value: string) => {
     setConfig(prev => ({ ...prev, [key]: value }));
   };
 

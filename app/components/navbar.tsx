@@ -23,6 +23,7 @@ export function Navbar() {
   }, []);
 
   const toggleTheme = () => {
+    if (!mounted) return;
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
