@@ -2,14 +2,13 @@
 
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
+import {
   FileStack,
   PencilRuler,
   HousePlus,
   Contact,
 } from "lucide-react";
 import { StatsSection } from "./stats-section";
-import { BuildingConfigurator } from "./building-configurator";
 import Image from "next/image";
 
 const services = [
@@ -99,8 +98,6 @@ export function ServicesSection() {
                   )}
                   {value === 'configuration' && (
                     <div className="mt-8">
-                      <h4 className="text-lg font-semibold mb-4">Building Configurator</h4>
-                      <BuildingConfigurator />
                     </div>
                   )}
                   {value === 'data-consolidation' && (
