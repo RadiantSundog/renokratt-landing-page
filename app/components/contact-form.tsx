@@ -50,15 +50,15 @@ export function ContactForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'contact_form_submit', {
-        event_category: 'engagement',
+
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "contact_form_submit", {
+        event_category: "engagement",
       });
     }
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       toast.success("Thank you for your message! We'll be in touch soon.");
       form.reset();
     } catch (error) {
@@ -77,10 +77,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input
-                  placeholder="Your Name"
-                  {...field}
-                />
+                <Input placeholder="Your Name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -93,11 +90,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input
-                  placeholder="Email Address"
-                  type="email"
-                  {...field}
-                />
+                <Input placeholder="Email Address" type="email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -110,11 +103,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input
-                  placeholder="Phone Number"
-                  type="tel"
-                  {...field}
-                />
+                <Input placeholder="Phone Number" type="tel" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -127,11 +116,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Textarea
-                  placeholder="Your Message"
-                  {...field}
-                  rows={4}
-                />
+                <Textarea placeholder="Your Message" {...field} rows={4} />
               </FormControl>
               <FormMessage />
             </FormItem>

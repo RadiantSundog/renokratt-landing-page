@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const Charts = dynamic(() => import('./charts'), {
+const Charts = dynamic(() => import("./charts"), {
   ssr: false,
   loading: () => (
     <div className="h-[400px] w-full flex items-center justify-center">

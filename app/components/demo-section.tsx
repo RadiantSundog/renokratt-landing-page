@@ -7,7 +7,10 @@ export function DemoSection() {
         <h2 className="text-3xl font-bold mb-8 gradient-text text-center">
           Our Configurator in Action
         </h2>
-        <div className="relative" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
+        <div
+          className="relative"
+          style={{ paddingTop: "56.25%" /* 16:9 Aspect Ratio */ }}
+        >
           {/* Replace 'your-video-id' with your actual YouTube video ID or video source URL */}
           <iframe
             src="https://www.youtube.com/embed/your-video-id"

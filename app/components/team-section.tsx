@@ -12,7 +12,7 @@ const founders = [
     description: "Renovation Domain Expert",
     email: "joosep.viik@create.ee",
     image: "/joosep-avatar.png",
-    linkedin: "https://www.linkedin.com/in/joosepviik/"
+    linkedin: "https://www.linkedin.com/in/joosepviik/",
   },
   {
     name: "Karel Kangro",
@@ -20,31 +20,31 @@ const founders = [
     description: "Technical Lead & System Architect",
     email: "karel@spiral.ee",
     image: "/karel-avatar.png",
-    linkedin: "https://www.linkedin.com/in/karel-kangro/"
-  }
+    linkedin: "https://www.linkedin.com/in/karel-kangro/",
+  },
 ];
 
 const teamMembers = [
   {
     name: "Mihkel Jaaniste",
     role: "Operations",
-    image: "/mihkel-avatar.png"
+    image: "/mihkel-avatar.png",
   },
   {
     name: "Ilya Vasilyev",
     role: "UI, UX, Frontend",
-    image: "/ilya-avatar.png"
+    image: "/ilya-avatar.png",
   },
   {
     name: "Alexander Levero",
     role: "Full Stack Developer",
-    image: "alex-avatar.png"
+    image: "alex-avatar.png",
   },
   {
     name: "Kalmer Gross",
     role: "Business Development",
-    image: "kalmer-avatar.png"
-  }
+    image: "kalmer-avatar.png",
+  },
 ];
 
 const mentors = [
@@ -52,20 +52,20 @@ const mentors = [
     name: "Ergo Pikas (PhD)",
     role: "Tenured Assistant Professor",
     organization: "TalTech",
-    image: "/taltech-logo.png"
+    image: "/taltech-logo.png",
   },
   {
     name: "Martin Talts",
     role: "CEO of KMT Prefab",
     organization: "KMT Prefab",
-    image: "/kmt-logo.png"
+    image: "/kmt-logo.png",
   },
   {
     name: "Renee Puusepp (PhD)",
     role: "Senior Researcher",
     organization: "EKA & Creatomus",
-    image: "/creatomus-logo.png"
-  }
+    image: "/creatomus-logo.png",
+  },
 ];
 
 export function TeamSection() {
@@ -78,9 +78,12 @@ export function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-4 gradient-text">Meet Our Team</h2>
+          <h2 className="text-3xl font-bold mb-4 gradient-text">
+            Meet Our Team
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A dedicated team of experts committed to revolutionizing the renovation industry
+            A dedicated team of experts committed to revolutionizing the
+            renovation industry
           </p>
         </motion.div>
 
@@ -105,7 +108,9 @@ export function TeamSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-xl">{founder.name}</h3>
-                  <p className="text-lg text-muted-foreground">{founder.role}</p>
+                  <p className="text-lg text-muted-foreground">
+                    {founder.role}
+                  </p>
                   <p className="text-sm text-muted-foreground mt-1">
                     {founder.description}
                   </p>
@@ -116,7 +121,9 @@ export function TeamSection() {
                   variant="outline"
                   size="lg"
                   className="w-full"
-                  onClick={() => window.location.href = `mailto:${founder.email}`}
+                  onClick={() =>
+                    (window.location.href = `mailto:${founder.email}`)
+                  }
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Contact
@@ -125,7 +132,7 @@ export function TeamSection() {
                   variant="outline"
                   size="lg"
                   className="w-full"
-                  onClick={() => window.open(founder.linkedin, '_blank')}
+                  onClick={() => window.open(founder.linkedin, "_blank")}
                 >
                   <Linkedin className="w-5 h-5 mr-2" />
                   LinkedIn
@@ -197,7 +204,9 @@ export function TeamSection() {
               </div>
               <h4 className="font-semibold">{mentor.name}</h4>
               <p className="text-sm text-muted-foreground">{mentor.role}</p>
-              <p className="text-sm text-muted-foreground">{mentor.organization}</p>
+              <p className="text-sm text-muted-foreground">
+                {mentor.organization}
+              </p>
             </motion.div>
           ))}
         </div>

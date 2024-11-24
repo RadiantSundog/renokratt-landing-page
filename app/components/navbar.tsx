@@ -32,7 +32,9 @@ export function Navbar() {
 
   const currentTheme = mounted ? theme || systemTheme : "light";
 
-  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleLanguageChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setLanguage(event.target.value);
   };
 
@@ -42,7 +44,11 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
             <img
-              src={currentTheme === "dark" ? "/renokratt-logo-dark.svg" : "/renokratt-logo-light.svg"}
+              src={
+                currentTheme === "dark"
+                  ? "/renokratt-logo-dark.svg"
+                  : "/renokratt-logo-light.svg"
+              }
               alt="Renokratt Logo"
               className="h-8 w-auto"
             />
@@ -73,13 +79,9 @@ export function Navbar() {
               <option value="EST">EST</option>
             </select>
 
-          {/* Theme Toggle */}
+            {/* Theme Toggle */}
 
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {mounted && currentTheme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
@@ -90,11 +92,7 @@ export function Navbar() {
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {mounted && currentTheme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (

@@ -16,10 +16,10 @@ const tiers = [
       "Savings potential",
       "Renovation guidelines",
       "Financing options",
-      "Contractor listing"
+      "Contractor listing",
     ],
     cta: "Start for free",
-    variant: "outline"
+    variant: "outline",
   },
   {
     name: "Premium",
@@ -32,31 +32,31 @@ const tiers = [
       "AI rendered visuals",
       "Cost analysis algorithms",
       "Detailed info for bidding",
-      "EIS grant checklist"
+      "EIS grant checklist",
     ],
     cta: "Subscribe",
     variant: "default",
-    popular: true
-  }
+    popular: true,
+  },
 ];
 
 const revenueStreams = [
   {
     title: "Contractor Referral",
-    description: "Connect with verified renovation experts"
+    description: "Connect with verified renovation experts",
   },
   {
     title: "Co-branded Marketing",
-    description: "Partner with leading brands in the industry"
+    description: "Partner with leading brands in the industry",
   },
   {
     title: "Market Statistics",
-    description: "Access detailed market insights and trends"
+    description: "Access detailed market insights and trends",
   },
   {
     title: "Design Project Service",
-    description: "Professional design consultation services"
-  }
+    description: "Professional design consultation services",
+  },
 ];
 
 export function PricingSection() {
@@ -64,7 +64,7 @@ export function PricingSection() {
     <section id="pricing" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold mb-4 gradient-text"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,8 @@ export function PricingSection() {
             Transparent Pricing
           </motion.h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose the plan that best fits your renovation needs. From basic planning to advanced AI-powered insights.
+            Choose the plan that best fits your renovation needs. From basic
+            planning to advanced AI-powered insights.
           </p>
         </div>
 
@@ -82,7 +83,7 @@ export function PricingSection() {
             <motion.div
               key={tier.name}
               className={`relative rounded-2xl p-8 ${
-                tier.popular ? 'border-2 border-yellow-500' : 'border'
+                tier.popular ? "border-2 border-yellow-500" : "border"
               }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -115,9 +116,9 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Button 
+              <Button
                 className={`w-full ${
-                  tier.popular ? 'bg-yellow-500 hover:bg-yellow-600' : ''
+                  tier.popular ? "bg-yellow-500 hover:bg-yellow-600" : ""
                 }`}
                 variant={tier.variant as any}
               >
@@ -128,7 +129,7 @@ export function PricingSection() {
         </div>
 
         <div className="mt-20">
-          <motion.h3 
+          <motion.h3
             className="text-2xl font-bold text-center mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -147,7 +148,9 @@ export function PricingSection() {
                 transition={{ delay: index * 0.1 }}
               >
                 <h4 className="font-semibold mb-2">{stream.title}</h4>
-                <p className="text-sm text-muted-foreground">{stream.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {stream.description}
+                </p>
               </motion.div>
             ))}
           </div>

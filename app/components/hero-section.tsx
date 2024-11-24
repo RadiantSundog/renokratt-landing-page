@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center text-center px-4">
+    <section
+      id="home"
+      className="relative h-screen flex items-center justify-center text-center px-4"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-6 gradient-text"

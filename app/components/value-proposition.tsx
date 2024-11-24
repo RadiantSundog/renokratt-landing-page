@@ -9,7 +9,8 @@ import { Check, Zap } from "lucide-react";
 const revenueStreams = [
   {
     title: "Compilation",
-    description: "We gather building registry data in one place to make renovation planning efficient",
+    description:
+      "We gather building registry data in one place to make renovation planning efficient",
   },
   {
     title: "Drafting",
@@ -17,11 +18,13 @@ const revenueStreams = [
   },
   {
     title: "SaaS",
-    description: "Transparent and afforadable pricing through a subscription service. Try it for free, or get expanded features and support with a monthly or yearly plan",
+    description:
+      "Transparent and afforadable pricing through a subscription service. Try it for free, or get expanded features and support with a monthly or yearly plan",
   },
   {
     title: "Rapport",
-    description: "We build trust and de-risk. Interact with a model of your home with all the renovations you need in real-time. Get a clear idea of renovation costs",
+    description:
+      "We build trust and de-risk. Interact with a model of your home with all the renovations you need in real-time. Get a clear idea of renovation costs",
   },
 ];
 
@@ -47,7 +50,9 @@ export function ValueProposition() {
             transition={{ delay: index * 0.1 }}
           >
             <h4 className="font-semibold mb-2">{stream.title}</h4>
-            <p className="text-sm text-muted-foreground">{stream.description}</p>
+            <p className="text-sm text-muted-foreground">
+              {stream.description}
+            </p>
           </motion.div>
         ))}
       </div>
