@@ -9,14 +9,17 @@ import { useTheme } from "next-themes";
 const navItems = [
   { href: "#home", label: "Home" },
   { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#stats", label: "Stats" },
+  { href: "#configurator", label: "Configurator" },
+  { href: "#our-team", label: "Our Team" },
   { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
+  const [language, setLanguage] = useState("ENG");
 
   useEffect(() => {
     setMounted(true);
@@ -27,13 +30,19 @@ export function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const currentTheme = mounted ? theme || systemTheme : "light";
+
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLanguage(event.target.value);
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-background border-b">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
             <img
-              src="/renokratt-logo-full.png"
+              src={currentTheme === "dark" ? "/renokratt-logo-dark.svg" : "/renokratt-logo-light.svg"}
               alt="Renokratt Logo"
               className="h-8 w-auto"
             />
@@ -52,16 +61,26 @@ export function Navbar() {
             ))}
           </div>
 
+          {/* Language Select */}
+
           <div className="hidden md:flex items-center space-x-4">
-            <Button className="bg-yellow-500 hover:bg-yellow-600">
-              Get Quote
-            </Button>
+            <select
+              value={language}
+              onChange={handleLanguageChange}
+              className="text-foreground/60 hover:text-foreground transition-colors px-4"
+            >
+              <option value="ENG">ENG</option>
+              <option value="EST">EST</option>
+            </select>
+
+          {/* Theme Toggle */}
+
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
             >
-              {mounted && theme === "dark" ? (
+              {mounted && currentTheme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
@@ -76,7 +95,7 @@ export function Navbar() {
               size="icon"
               onClick={toggleTheme}
             >
-              {mounted && theme === "dark" ? (
+              {mounted && currentTheme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
