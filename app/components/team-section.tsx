@@ -11,14 +11,16 @@ const founders = [
     role: "Founder & CEO",
     description: "Renovation Domain Expert",
     email: "joosep.viik@create.ee",
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&q=80"
+    image: "/joosep-avatar.png",
+    linkedin: "https://www.linkedin.com/in/joosepviik/"
   },
   {
     name: "Karel Kangro",
     role: "Co-founder & CTO",
     description: "Technical Lead & System Architect",
     email: "karel@spiral.ee",
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&q=80"
+    image: "/karel-avatar.png",
+    linkedin: "https://www.linkedin.com/in/karel-kangro/"
   }
 ];
 
@@ -26,22 +28,22 @@ const teamMembers = [
   {
     name: "Mihkel Jaaniste",
     role: "Operations",
-    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&q=80"
+    image: "/mihkel-avatar.png"
   },
   {
     name: "Ilya Vasilyev",
     role: "UI, UX, Frontend",
-    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&q=80"
+    image: "/ilya-avatar.png"
   },
   {
     name: "Alexander Levero",
     role: "Full Stack Developer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&q=80"
+    image: "alex-avatar.png"
   },
   {
     name: "Kalmer Gross",
     role: "Business Development",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&q=80"
+    image: "kalmer-avatar.png"
   }
 ];
 
@@ -50,27 +52,27 @@ const mentors = [
     name: "Ergo Pikas (PhD)",
     role: "Tenured Assistant Professor",
     organization: "TalTech",
-    image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&q=80"
+    image: "/taltech-logo.png"
   },
   {
     name: "Martin Talts",
     role: "CEO of KMT Prefab",
     organization: "KMT Prefab",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&q=80"
+    image: "/kmt-logo.png"
   },
   {
     name: "Renee Puusepp (PhD)",
     role: "Senior Researcher",
     organization: "EKA & Creatomus",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&q=80"
+    image: "/creatomus-logo.png"
   }
 ];
 
 export function TeamSection() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section id="our-team" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +125,7 @@ export function TeamSection() {
                   variant="outline"
                   size="lg"
                   className="w-full"
-                  onClick={() => window.open('https://linkedin.com', '_blank')}
+                  onClick={() => window.open(founder.linkedin, '_blank')}
                 >
                   <Linkedin className="w-5 h-5 mr-2" />
                   LinkedIn
@@ -162,13 +164,13 @@ export function TeamSection() {
         </div>
 
         {/* Mentors */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4">Our Mentors</h3>
+          <h3 className="text-2xl font-bold mb-4 gradient-text">Our Mentors</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Industry experts guiding our vision and strategy
           </p>
@@ -185,11 +187,11 @@ export function TeamSection() {
               transition={{ delay: index * 0.1 }}
             >
               <div className="mb-4">
-                <div className="relative w-24 h-24 mx-auto">
+                <div className="relative w-32 h-32 mx-auto">
                   <img
                     src={mentor.image}
                     alt={mentor.name}
-                    className="rounded-full object-cover w-full h-full"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
