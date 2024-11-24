@@ -4,15 +4,21 @@ import { HeroSection } from "./components/hero-section";
 import { PricingSection } from "./components/pricing-section";
 import { TeamSection } from "./components/team-section";
 import { Footer } from "./components/footer";
+import { ValueProposition } from "./components/value-proposition";
+import { InfoSection } from "./components/info-section";
+import { StatsSection } from "./components/stats-section";
+import { DemoSection } from "./components/demo-section";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen pt-16">
       <HeroSection />
-      <ServicesSection />
-      <PricingSection />
+      <InfoSection />
+      <StatsSection />
+      <DemoSection />
+      <ValueProposition />
       <TeamSection />
-      
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-muted">
         <div className="max-w-3xl mx-auto px-4">
