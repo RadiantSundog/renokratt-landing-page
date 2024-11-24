@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-[70vh] flex items-center justify-center text-center px-4">
+    <section id="home" className="relative h-screen flex items-center justify-center text-center px-4">
       <div className="max-w-4xl mx-auto">
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-6 gradient-text"
@@ -29,9 +29,9 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600">
+          {/* <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600">
             Get Started <ChevronRight className="ml-2 h-4 w-4" />
-          </Button>
+          </Button> */}
         </motion.div>
       </div>
     </section>

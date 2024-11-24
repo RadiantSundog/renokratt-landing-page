@@ -29,7 +29,8 @@ const services = [
     icon: HousePlus,
     title: "Configuration",
     description: "Customizable renovation planning and configuration tools.",
-    features: ["Interactive Tools", "Custom Solutions", "Real-time Preview", "Option Analysis"]
+    features: ["Interactive Tools", "Custom Solutions", "Real-time Preview", "Option Analysis"],
+    graphic: "/renokratt-demo.gif"
   },
   {
     icon: Contact,
@@ -43,7 +44,7 @@ const services = [
 export function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7x1 mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 gradient-text">
           Our Services
         </h2>
@@ -92,7 +93,7 @@ export function ServicesSection() {
                       <img
                         src={service.graphic}
                         alt={service.title}
-                        className="w-full h-64 object-cover"
+                        className="w-full h-84 object-cover"
                       />
                     </div>
                   )}
