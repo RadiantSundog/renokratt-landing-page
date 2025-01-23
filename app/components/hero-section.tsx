@@ -34,8 +34,7 @@ export function HeroSection() {
               alt="Renokratt Logo"
               width={40}
               height={40}
-              style={{ height: "auto", width: "auto", maxWidth: "30%"}}
-              className="object-contain"
+              className="object-contain h-auto w-[15rem] sm:w-[20rem]"
               priority
             />
           </div>
