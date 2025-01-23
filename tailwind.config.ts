@@ -60,6 +60,11 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        // Custom colors
+        raisin: '#262626',
+        quicksilver: '#ACA296',
+        platinum: '#E8E5E0',
+        outerspace: '#414D43',
       },
       keyframes: {
         'accordion-down': {
@@ -82,6 +87,7 @@ const config: Config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

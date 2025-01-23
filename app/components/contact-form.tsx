@@ -1,136 +1,101 @@
 "use client";
 
 import * as React from "react";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  comment: z.string().min(10, "Comment must be at least 10 characters"),
 });
 
 type FormData = z.infer<typeof formSchema>;
 
 export function ContactForm() {
-  const [mounted, setMounted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
-      message: "",
+      comment: "",
     },
   });
 
-  if (!mounted) {
-    return null;
-  }
-
   const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "contact_form_submit", {
-        event_category: "engagement",
-      });
-    }
-
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("Thank you for your message! We'll be in touch soon.");
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit the form");
+      }
+
+      const result = await response.json();
+      alert(result.message || "Form submitted successfully!");
       form.reset();
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+      console.error(error);
+      alert("An error occurred. Please try again.");
     }
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Your Name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <section
+      id="contact"
+      className="bg-gray-800 text-white rounded-xl p-12 md:p-16 max-w-screen-xl mx-auto min-h-[500px] flex items-center justify-center"
+    >
+      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+        {/* Left Column */}
+        <div className="flex flex-col justify-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold leading-snug text-center md:text-left">
+            Let’s talk about <br /> what you want to achieve
+          </h2>
+          <div className="text-center md:text-left">
+            <h3 className="text-lg font-medium">Contact</h3>
+            <p className="text-sm mt-2">
+              Info@Renokratt.ee <br />
+            </p>
+          </div>
+        </div>
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Email Address" type="email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Phone Number" type="tel" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Textarea placeholder="Your Message" {...field} rows={4} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button
-          type="submit"
-          className="w-full bg-yellow-500 hover:bg-yellow-600"
-          disabled={isSubmitting}
+        {/* Right Column */}
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col justify-center space-y-6"
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
-        </Button>
-      </form>
-    </Form>
+          <Input
+            placeholder="Name"
+            {...form.register("name")}
+            className="bg-gray-700 text-white border-0 focus:ring-2 focus:ring-yellow-500 rounded px-4 py-3"
+          />
+          <Input
+            placeholder="Email"
+            {...form.register("email")}
+            className="bg-gray-700 text-white border-0 focus:ring-2 focus:ring-yellow-500 rounded px-4 py-3"
+          />
+          <Input
+            placeholder="Type your comment here"
+            type="comment"
+            {...form.register("comment")}
+            className="bg-gray-700 text-white border-0 focus:ring-2 focus:ring-yellow-500 rounded px-4 py-3"
+          />
+          <Button
+            type="submit"
+            className="bg-yellow-500 text-gray-800 font-medium rounded-full py-3 px-8 hover:bg-yellow-600 transition"
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
+    </section>
   );
 }

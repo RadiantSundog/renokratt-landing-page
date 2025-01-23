@@ -1,66 +1,64 @@
-// components/value-proposition.tsx
-
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Check, Zap } from "lucide-react";
-
-const revenueStreams = [
-  {
-    title: "Compilation",
-    description:
-      "We gather building registry data in one place to make renovation planning efficient",
-  },
-  {
-    title: "Drafting",
-    description: "We create the design task documents for you",
-  },
-  {
-    title: "SaaS",
-    description:
-      "Transparent and afforadable pricing through a subscription service. Try it for free, or get expanded features and support with a monthly or yearly plan",
-  },
-  {
-    title: "Rapport",
-    description:
-      "We build trust and de-risk. Interact with a model of your home with all the renovations you need in real-time. Get a clear idea of renovation costs",
-  },
-];
+import {
+  BookOpenText,
+  ChartNoAxesCombined,
+  BriefcaseBusiness,
+} from "lucide-react";
 
 export function ValueProposition() {
   return (
-    <div className="px-20 mt-20">
-      <motion.h3
-        className="text-2xl font-bold gradient-text text-center mb-12"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        Our Role
-      </motion.h3>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {revenueStreams.map((stream, index) => (
-          <motion.div
-            key={stream.title}
-            className="p-6 rounded-lg border bg-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <h4 className="font-semibold mb-2">{stream.title}</h4>
-            <p className="text-sm text-muted-foreground">
-              {stream.description}
+    <section
+      id="services"
+      className="bg-white section-padding px-8 relative"
+      style={{
+        backgroundImage: "url('/interlaced.png')",
+        backgroundSize: "400px 400px",
+        backgroundRepeat: "repeat",
+      }}
+    >
+      <div className="max-w-screen-xl mx-auto">
+        {/* Section Heading */}
+        <h2 className="text-4xl text-raisin font-bold mb-12">Our services</h2>
+
+        {/* Grid of Offerings */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* First Offering */}
+          <div className="flex flex-col items-start space-y-4">
+            <BookOpenText className="text-raisin w-12 h-12" />
+            <h3 className="text-lg text-raisin font-bold">
+              Knowledge repository
+            </h3>
+            <p className="text-quicksilver">
+              We gather building registry, Estonian Land Board, and TalTech data
+              in one place to make renovation planning efficient.
             </p>
-          </motion.div>
-        ))}
+          </div>
+
+          {/* Second Offering */}
+          <div className="flex flex-col items-start space-y-4">
+            <ChartNoAxesCombined className="text-raisin w-12 h-12" />
+            <h3 className="text-lg text-raisin font-bold">
+              Data-powered insights
+            </h3>
+            <p className="text-quicksilver">
+              We show you the expected renovation estimation of total costs,
+              comparison of running costs, and impact on energy performance.
+            </p>
+          </div>
+
+          {/* Third Offering */}
+          <div className="flex flex-col items-start space-y-4">
+            <BriefcaseBusiness className="text-raisin w-12 h-12" />
+            <h3 className="text-lg text-raisin font-bold">Sales support</h3>
+            <p className="text-quicksilver">
+              Pitch the benefits of the renovation. Choose the renovation
+              options for your home in real-time. Build trust and de-risk as you
+              reach consensus among the homeowners.
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="text-center mt-12">
-        {/* <Button className="bg-yellow-500 hover:bg-yellow-600">
-          Connect With Us
-        </Button> */}
-      </div>
-    </div>
+    </section>
   );
 }

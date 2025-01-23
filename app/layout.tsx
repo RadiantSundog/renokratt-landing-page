@@ -1,10 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Analytics } from "./components/analytics";
-import { Navbar } from "./components/navbar";
-import { Toaster } from "@/components/ui/sonner";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,21 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`scroll-smooth ${inter.className}`}
-        suppressHydrationWarning
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-          <Toaster />
-          <Analytics />
-        </ThemeProvider>
+      <body className={`scroll-smooth ${inter.className}`}>
+        {children}
       </body>
     </html>
   );
