@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2024 Renokratt OÜ
+            © 2025 Renokratt OÜ
           </div>
           <Link
             href="https://linkedin.com/company/renokratt"

@@ -1,25 +1,49 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 
 export function DemoSection() {
+  const [isMounted, setIsMounted] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("/demo.mp4"); // Default to desktop video
+
+  useEffect(() => {
+    // Indicate the component has mounted
+    setIsMounted(true);
+
+    // Update video source based on screen size
+    const updateVideoSource = () => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      setVideoSrc(isMobile ? "/demo-mobile.mp4" : "/demo.mp4");
+    };
+
+    updateVideoSource(); // Run on initial render
+    window.addEventListener("resize", updateVideoSource); // Listen for screen size changes
+
+    return () => {
+      window.removeEventListener("resize", updateVideoSource); // Clean up
+    };
+  }, []);
+
+  if (!isMounted) {
+    // Render nothing during server-side rendering
+    return null;
+  }
+
   return (
-    <section id="configurator" className="py-16 bg-muted">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 gradient-text text-center">
-          Our Configurator in Action
-        </h2>
-        <div
-          className="relative"
-          style={{ paddingTop: "56.25%" /* 16:9 Aspect Ratio */ }}
-        >
-          {/* Replace 'your-video-id' with your actual YouTube video ID or video source URL */}
-          <iframe
-            src="https://www.youtube.com/embed/your-video-id"
-            title="Product Demo Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute top-0 left-0 w-full h-full"
-          ></iframe>
+    <section className="bg-white section-padding px-8">
+      <div className="max-w-screen-xl mx-auto">
+        {/* Video Player */}
+        <div className="w-full h-full bg-gray-200 rounded-3xl">
+          <video
+            className="w-full h-full object-cover rounded-3xl"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>
