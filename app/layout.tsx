@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from "next/font/google";
 import { ContactForm } from "./components/contact-form";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`scroll-smooth ${inter.className}`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
