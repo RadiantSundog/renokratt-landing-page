@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`scroll-smooth ${inter.className}`}>
         {children}
-        <ContactForm />
         <Analytics />
       </body>
     </html>
