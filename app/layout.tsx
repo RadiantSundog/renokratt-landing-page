@@ -19,6 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+                {/* Favicon */}
+                <link rel="icon" href="/renokratt-logo-circle.png" sizes="any" type="image/png" />
+      </head>
       <body className={`scroll-smooth ${inter.className}`}>
         {children}
         <Analytics />
