@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About us",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Simplify and support your renovation projects",
+    "subtitle": "Renovation consulting is complex, we make it easier"
+  },
+  "info": {
+    "title": "Save time, and more easily get homeowner buy-in",
+    "description": "Renokratt is a configurator to simulate building renovation design options for Soviet-era apartment buildings.",
+    "stats": {
+      "buildings": {
+        "value": "14,000",
+        "label": "Buildings",
+        "detail": "to be renovated by 2050"
+      },
+      "yearlyRenovations": {
+        "value": "~200",
+        "label": "Renovated per year",
+        "detail": "should be ~500"
+      },
+      "averagePrice": {
+        "value": "1-3 mil €",
+        "label": "Average price of 1 project",
+        "detail": "20k - 5 mil €"
+      }
+    },
+    "mapAlt": "Map of Estonia"
+  },
+  "valueProposition": {
+    "title": "Our services",
+    "offerings": {
+      "knowledge": {
+        "title": "Knowledge repository",
+        "description": "We gather building registry, Estonian Land Board, and TalTech data in one place to make renovation planning efficient."
+      },
+      "data": {
+        "title": "Data-powered insights",
+        "description": "We show you the expected renovation estimation of total costs, comparison of running costs, and impact on energy performance."
+      },
+      "sales": {
+        "title": "Sales support",
+        "description": "Pitch the benefits of the renovation. Choose the renovation options for your home in real-time. Build trust and de-risk as you reach consensus among the homeowners."
+      }
+    }
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "subtitle": "A dedicated team of experts committed to revolutionizing the renovation industry",
+    "contact": "Contact",
+    "mentorsTitle": "Our Mentors",
+    "mentorsSubtitle": "Industry experts guiding our vision and strategy",
+    "founders": [
+      {
+        "name": "Joosep Viik",
+        "role": "Founder & CEO",
+        "description": "Renovation Domain Expert",
+        "email": "joosep.viik@create.ee",
+        "image": "/joosep-avatar.png",
+        "linkedin": "https://www.linkedin.com/in/joosepviik/"
+      },
+      {
+        "name": "Karel Kangro",
+        "role": "Co-founder & CTO",
+        "description": "Technical Lead & System Architect",
+        "email": "karel@spiral.ee",
+        "image": "/karel-avatar.png",
+        "linkedin": "https://www.linkedin.com/in/karel-kangro/"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Ergo Pikas (PhD)",
+        "role": "Tenured Assistant Professor",
+        "organization": "TalTech",
+        "image": "/taltech-logo.png"
+      },
+      {
+        "name": "Martin Talts",
+        "role": "CEO of KMT Prefab",
+        "organization": "KMT Prefab",
+        "image": "/kmt-logo.png"
+      },
+      {
+        "name": "Renee Puusepp (PhD)",
+        "role": "Senior Researcher",
+        "organization": "EKA & Creatomus",
+        "image": "/creatomus-logo.png"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let’s talk about what you want to achieve",
+    "contact": "Contact",
+    "placeholders": {
+      "name": "Name",
+      "email": "Email",
+      "comment": "Type your comment here"
+    },
+    "errors": {
+      "name": "Name must be at least 2 characters",
+      "email": "Invalid email address",
+      "comment": "Comment must be at least 10 characters"
+    },
+    "submit": "Submit",
+    "success": "Form submitted successfully!",
+    "error": "An error occurred. Please try again."
+  },
+  "partners": {
+    "title": "Our partners",
+    "subtitle": "Collaborating with leaders in innovation and sustainability",
+    "beamlineMessage": "Renokratt OÜ is a participant in the “Energy | Climate Focus” acceleration program. The “Energy | Climate Focus” acceleration program implemented by Beamline Accelerator is supported by the Environmental Investment Centre (KIK) within the framework of the Estonian recovery plan from the European Union's Recovery and Resilience Fund (RRF) and is aimed at implementing green technology development programs."
+  }
+}

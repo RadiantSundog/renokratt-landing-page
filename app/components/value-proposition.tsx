@@ -5,8 +5,11 @@ import {
   ChartNoAxesCombined,
   BriefcaseBusiness,
 } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export function ValueProposition() {
+  const { translations } = useLanguage();
+
   return (
     <section
       id="services"
@@ -19,7 +22,9 @@ export function ValueProposition() {
     >
       <div className="max-w-screen-xl mx-auto">
         {/* Section Heading */}
-        <h2 className="text-4xl text-raisin font-bold mb-12">Our services</h2>
+        <h2 className="text-4xl text-raisin font-bold mb-12">
+          {translations.valueProposition?.title || "Our services"}
+        </h2>
 
         {/* Grid of Offerings */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -27,11 +32,13 @@ export function ValueProposition() {
           <div className="flex flex-col items-start space-y-4">
             <BookOpenText className="text-raisin w-12 h-12" />
             <h3 className="text-lg text-raisin font-bold">
-              Knowledge repository
+              {translations.valueProposition?.offerings?.knowledge?.title ||
+                "Knowledge repository"}
             </h3>
             <p className="text-quicksilver">
-              We gather building registry, Estonian Land Board, and TalTech data
-              in one place to make renovation planning efficient.
+              {translations.valueProposition?.offerings?.knowledge
+                ?.description ||
+                "We gather building registry, Estonian Land Board, and TalTech data in one place to make renovation planning efficient."}
             </p>
           </div>
 
@@ -39,22 +46,25 @@ export function ValueProposition() {
           <div className="flex flex-col items-start space-y-4">
             <ChartNoAxesCombined className="text-raisin w-12 h-12" />
             <h3 className="text-lg text-raisin font-bold">
-              Data-powered insights
+              {translations.valueProposition?.offerings?.data?.title ||
+                "Data-powered insights"}
             </h3>
             <p className="text-quicksilver">
-              We show you the expected renovation estimation of total costs,
-              comparison of running costs, and impact on energy performance.
+              {translations.valueProposition?.offerings?.data?.description ||
+                "We show you the expected renovation estimation of total costs, comparison of running costs, and impact on energy performance."}
             </p>
           </div>
 
           {/* Third Offering */}
           <div className="flex flex-col items-start space-y-4">
             <BriefcaseBusiness className="text-raisin w-12 h-12" />
-            <h3 className="text-lg text-raisin font-bold">Sales support</h3>
+            <h3 className="text-lg text-raisin font-bold">
+              {translations.valueProposition?.offerings?.sales?.title ||
+                "Sales support"}
+            </h3>
             <p className="text-quicksilver">
-              Pitch the benefits of the renovation. Choose the renovation
-              options for your home in real-time. Build trust and de-risk as you
-              reach consensus among the homeowners.
+              {translations.valueProposition?.offerings?.sales?.description ||
+                "Pitch the benefits of the renovation. Choose the renovation options for your home in real-time. Build trust and de-risk as you reach consensus among the homeowners."}
             </p>
           </div>
         </div>

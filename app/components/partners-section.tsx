@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "../context/LanguageContext";
 
 const partners = [
   {
@@ -37,6 +38,8 @@ const partners = [
 ];
 
 export function PartnersSection() {
+  const { translations } = useLanguage();
+
   return (
     <section id="partners" className="section-padding bg-muted/30">
       <div className="max-w-7xl mx-auto px-4">
@@ -48,10 +51,11 @@ export function PartnersSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold mb-4 gradient-text">
-            Our Partners
+            {translations.partners?.title || "Our partners"}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Collaborating with leaders in innovation and sustainability
+            {translations.partners?.subtitle ||
+              "Collaborating with leaders in innovation and sustainability"}
           </p>
         </motion.div>
 
@@ -99,13 +103,8 @@ export function PartnersSection() {
           viewport={{ once: true }}
         >
           <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-            Renokratt OÜ is a participant in the “Energy | Climate Focus”
-            acceleration program. The “Energy | Climate Focus” acceleration
-            program implemented by Beamline Accelerator is supported by the
-            Environmental Investment Centre (KIK) within the framework of the
-            Estonian recovery plan from the European Union&apos;s Recovery and
-            Resilience Fund (RRF) and is aimed at implementing green technology
-            development programs.
+            {translations.partners?.beamlineMessage ||
+              "Renokratt OÜ is a participant in the “Energy | Climate Focus” acceleration program. The “Energy | Climate Focus” acceleration program implemented by Beamline Accelerator is supported by the Environmental Investment Centre (KIK) within the framework of the Estonian recovery plan from the European Union&apos;s Recovery and Resilience Fund (RRF) and is aimed at implementing green technology development programs."}
           </p>
         </motion.div>
       </div>

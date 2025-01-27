@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "home": "Kodu",
+    "services": "Teenused",
+    "about": "Meeskond",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Renoveerimise kavandamine tehtud lihtsaks",
+    "subtitle": "Korterelamute renoveerimine on keeruline, me teeme selle kergemaks"
+  },
+  "info": {
+    "title": "Avasta renoveerimisvõimalusi ja jõudke korteriühistuga renoveerimisotsuseni",
+    "description": "Renokratt on tark abiline korterelamute renoveerimise võimaluste läbimängimiseks ja eelanalüüsiks.",
+    "stats": {
+      "buildings": {
+        "value": "14,000",
+        "label": "Korterelamu",
+        "detail": "vajavad renoveerimist enne 2050. aastat"
+      },
+      "yearlyRenovations": {
+        "value": "~200",
+        "label": "Aastane renoveerimistempo",
+        "detail": "peaks olema ~500"
+      },
+      "averagePrice": {
+        "value": "1-3 milj €",
+        "label": "Keskmine renoveerimise maksumus",
+        "detail": "20t - 5 milj €"
+      }
+    },
+    "mapAlt": "Eesti kaart"
+  },
+  "valueProposition": {
+    "title": "Meie teenused",
+    "offerings": {
+      "knowledge": {
+        "title": "Keskne andmehaldus",
+        "description": "Me koondame sinu hoone avaandmed ja TalTechi teadmised ühte kohta kokku, et muuta renoveerimise kavandamine tõhusamaks."
+      },
+      "data": {
+        "title": "Eelanalüüsid",
+        "description": "Kasutame tehisaru ja TalTechi tööriistu, et anda prognoos, kuidas renoveeritud hoone  elanike eluolu muutma hakkab."
+      },
+      "sales": {
+        "title": "Otsustustugi",
+        "description": "Põhjendage renoveerimise eeliseid korteriomanikele. Vaadake reaalajas, kuidas erinevad renoveerimisvalikud tulemust mõjutavad. Jõudke korteriühistu seas üksmeelele."
+      }
+    }
+  },
+  "team": {
+    "title": "Meie meeskond",
+    "subtitle": "Renokrati taga oma valdkonna eksperdid, koostöös Eesti akadeemilise tipuga",
+    "contact": "Kontakt",
+    "mentorsTitle": "Mentorid",
+    "mentorsSubtitle": "Eksperdid, kes meid teekonnal toetavad",
+    "founders": [
+      {
+        "name": "Joosep Viik",
+        "role": "Founder & CEO",
+        "description": "Renovation Domain Expert",
+        "email": "joosep.viik@create.ee",
+        "image": "/joosep-avatar.png",
+        "linkedin": "https://www.linkedin.com/in/joosepviik/"
+      },
+      {
+        "name": "Karel Kangro",
+        "role": "Co-founder & CTO",
+        "description": "Technical Lead & System Architect",
+        "email": "karel@spiral.ee",
+        "image": "/karel-avatar.png",
+        "linkedin": "https://www.linkedin.com/in/karel-kangro/"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Ergo Pikas (PhD)",
+        "role": "Abiprofessor tenuuris",
+        "organization": "TalTech",
+        "image": "/taltech-logo.png"
+      },
+      {
+        "name": "Martin Talts",
+        "role": "Tegevjuht",
+        "organization": "KMT Prefab",
+        "image": "/kmt-logo.png"
+      },
+      {
+        "name": "Renee Puusepp (PhD)",
+        "role": "Vanemteadur",
+        "organization": "EKA & Creatomus",
+        "image": "/creatomus-logo.png"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Võta ühendust",
+    "contact": "Kontakt",
+    "placeholders": {
+      "name": "Nimi",
+      "email": "Emaili",
+      "comment": "Sinu sõnum, päring või küsimus"
+    },
+    "errors": {
+      "name": "Nimes peab olema vähemalt 2 tähte",
+      "email": "Vale e-posti aadress",
+      "comment": "Kommentaar peab olema vähemalt 10 tähe pikkune"
+    },
+    "submit": "Saada",
+    "success": "Vorm edukalt saadetud!",
+    "error": "Ilmnes viga. Palun proovi uuesti."
+  },
+  "partners": {
+    "title": "Partnerid",
+    "subtitle": "Koostöös innovatsiooni ja jätkusuutlikkuse eestvedajatega",
+    "beamlineMessage": "Renokratt OÜ osaleb Beamline’i kiirendiprogrammis “Energy | Climate Focus”, mida toetab Keskkonnainvesteeringute Keskus (KIK) Euroopa Liidu taaste- ja vastupidavusrahastu (RRF) Eesti taastekava raames ning see on suunatud rohetehnoloogia arendusprogrammide elluviimisele."
+  }
+}
