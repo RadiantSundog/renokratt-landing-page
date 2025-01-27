@@ -1,6 +1,7 @@
 module.exports = {
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "et", "ru"],
+    locales: ['en', 'et', 'ru'], // English, Estonian, Russian
+    defaultLocale: 'en',
+    localeDetection: true, // Automatically detect user's language
   },
 };

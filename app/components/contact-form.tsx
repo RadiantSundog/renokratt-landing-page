@@ -6,16 +6,33 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  comment: z.string().min(10, "Comment must be at least 10 characters"),
-});
-
-type FormData = z.infer<typeof formSchema>;
+import { useLanguage } from "../context/LanguageContext";
 
 export function ContactForm() {
+  const { translations } = useLanguage();
+
+  const formSchema = z.object({
+    name: z
+      .string()
+      .min(
+        2,
+        translations.contact?.errors?.name ||
+          "Name must be at least 2 characters"
+      ),
+    email: z
+      .string()
+      .email(translations.contact?.errors?.email || "Invalid email address"),
+    comment: z
+      .string()
+      .min(
+        10,
+        translations.contact?.errors?.comment ||
+          "Comment must be at least 10 characters"
+      ),
+  });
+
+  type FormData = z.infer<typeof formSchema>;
+
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,11 +57,17 @@ export function ContactForm() {
       }
 
       const result = await response.json();
-      alert(result.message || "Form submitted successfully!");
+      alert(
+        result.message ||
+          translations.contact?.success ||
+          "Form submitted successfully!"
+      );
       form.reset();
     } catch (error) {
       console.error(error);
-      alert("An error occurred. Please try again.");
+      alert(
+        translations.contact?.error || "An error occurred. Please try again."
+      );
     }
   };
 
@@ -57,10 +80,13 @@ export function ContactForm() {
         {/* Left Column */}
         <div className="flex flex-col justify-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold leading-snug text-center md:text-left">
-            Let’s talk about <br /> what you want to achieve
+            {translations.contact?.heading ||
+              "Let’s talk about what you want to achieve"}
           </h2>
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-medium">Contact</h3>
+            <h3 className="text-lg font-medium">
+              {translations.contact?.contact || "Contact"}
+            </h3>
             <p className="text-sm mt-2">
               Info@Renokratt.ee <br />
             </p>
@@ -73,17 +99,20 @@ export function ContactForm() {
           className="flex flex-col justify-center space-y-6"
         >
           <Input
-            placeholder="Name"
+            placeholder={translations.contact?.placeholders?.name || "Name"}
             {...form.register("name")}
             className="bg-gray-700 text-white border-0 focus:ring-2 focus:ring-yellow-500 rounded px-4 py-3"
           />
           <Input
-            placeholder="Email"
+            placeholder={translations.contact?.placeholders?.email || "Email"}
             {...form.register("email")}
             className="bg-gray-700 text-white border-0 focus:ring-2 focus:ring-yellow-500 rounded px-4 py-3"
           />
           <Input
-            placeholder="Type your comment here"
+            placeholder={
+              translations.contact?.placeholders?.comment ||
+              "Type your comment here"
+            }
             type="comment"
             {...form.register("comment")}
             className="bg-gray-700 text-white border-0 focus:ring-2 focus:ring-yellow-500 rounded px-4 py-3"
@@ -92,7 +121,7 @@ export function ContactForm() {
             type="submit"
             className="bg-yellow-500 text-gray-800 font-medium rounded-full py-3 px-8 hover:bg-yellow-600 transition"
           >
-            Submit
+            {translations.contact?.submit || "Submit"}
           </Button>
         </form>
       </div>
