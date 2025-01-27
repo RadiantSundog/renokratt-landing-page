@@ -1,15 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
-import { ContactForm } from "./components/contact-form";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Renokratt",
-  description: "Data-Powered Renovation Insights for YOUR Building.",
+  description: "Simplify and support your renovation projects",
 };
 
 export default function RootLayout({
@@ -20,11 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-                {/* Favicon */}
-                <link rel="icon" href="/renokratt-logo-circle.png" sizes="any" type="image/png" />
+        {/* Favicon */}
+        <link
+          rel="icon"
+          href="/renokratt-logo-circle.png"
+          sizes="any"
+          type="image/png"
+        />
       </head>
       <body className={`scroll-smooth ${inter.className}`}>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         <Analytics />
         <SpeedInsights />
       </body>
