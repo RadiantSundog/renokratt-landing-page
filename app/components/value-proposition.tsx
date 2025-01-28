@@ -14,11 +14,11 @@ export function ValueProposition() {
     <section
       id="services"
       className="bg-white section-padding px-8 relative"
-      style={{
-        backgroundImage: "url('/interlaced.png')",
-        backgroundSize: "400px 400px",
-        backgroundRepeat: "repeat",
-      }}
+      // style={{
+      //   backgroundImage: "url('/interlaced.png')",
+      //   backgroundSize: "400px 400px",
+      //   backgroundRepeat: "repeat",
+      // }}
     >
       <div className="max-w-screen-xl mx-auto">
         {/* Section Heading */}
@@ -35,7 +35,7 @@ export function ValueProposition() {
               {translations.valueProposition?.offerings?.knowledge?.title ||
                 "Knowledge repository"}
             </h3>
-            <p className="text-quicksilver">
+            <p className="text-gray-500">
               {translations.valueProposition?.offerings?.knowledge
                 ?.description ||
                 "We gather building registry, Estonian Land Board, and TalTech data in one place to make renovation planning efficient."}
@@ -49,7 +49,7 @@ export function ValueProposition() {
               {translations.valueProposition?.offerings?.data?.title ||
                 "Data-powered insights"}
             </h3>
-            <p className="text-quicksilver">
+            <p className="text-gray-500">
               {translations.valueProposition?.offerings?.data?.description ||
                 "We show you the expected renovation estimation of total costs, comparison of running costs, and impact on energy performance."}
             </p>
@@ -62,7 +62,7 @@ export function ValueProposition() {
               {translations.valueProposition?.offerings?.sales?.title ||
                 "Sales support"}
             </h3>
-            <p className="text-quicksilver">
+            <p className="text-gray-500">
               {translations.valueProposition?.offerings?.sales?.description ||
                 "Pitch the benefits of the renovation. Choose the renovation options for your home in real-time. Build trust and de-risk as you reach consensus among the homeowners."}
             </p>

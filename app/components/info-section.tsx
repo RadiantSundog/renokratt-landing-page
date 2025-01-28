@@ -14,7 +14,7 @@ export function InfoSection() {
           <h2 className="text-4xl text-raisin md:text-5xl font-bold leading-tight mb-4">
             {translations.info?.title || "Loading..."}
           </h2>
-          <p className="text-lg text-quicksilver mb-8">
+          <p className="text-lg text-gray-500 mb-8">
             {translations.info?.description || "Loading..."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
