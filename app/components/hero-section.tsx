@@ -10,13 +10,13 @@ export function HeroSection() {
   const { translations, setLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      const offset = window.innerHeight / 2 - contactSection.offsetHeight / 2;
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offset = window.innerHeight / 2 - section.offsetHeight / 2;
       const adjustment = 320; // Adjust this value to scroll slightly less
       const topPosition =
-        contactSection.getBoundingClientRect().top +
+        section.getBoundingClientRect().top +
         window.scrollY +
         offset -
         adjustment;
@@ -28,9 +28,9 @@ export function HeroSection() {
   };
 
   return (
-    <div className="bg-white flex flex-col">
+    <div id="home" className="bg-white flex flex-col pb-28">
       {/* Navbar */}
-      <nav id="home" className="w-full bg-white pb-4 border-b border-gray-200">
+      <nav className="w-full bg-white pb-4">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -39,34 +39,38 @@ export function HeroSection() {
               alt="Renokratt Logo"
               width={40}
               height={40}
-              className="object-contain h-auto w-[15rem] sm:w-[20rem]"
+              className="object-contain h-auto w-[8rem] sm:w-[12rem]"
               priority
             />
           </div>
 
-          {/* Navigation Links (Desktop) */}
-          <div className="hidden md:flex space-x-6 items-center">
+          {/* Navigation Links (Centered) */}
+          <div className="hidden md:flex space-x-8 items-center justify-center flex-1">
             <a
-              href="#home"
-              className="text-raisin hover:text-black font-medium"
+              onClick={() => scrollToSection("home")}
+              className="text-raisin hover:text-black font-medium cursor-pointer"
             >
               {translations.nav?.home || "Home"}
             </a>
             <a
-              href="#services"
-              className="text-raisin hover:text-black font-medium"
+              onClick={() => scrollToSection("services")}
+              className="text-raisin hover:text-black font-medium cursor-pointer"
             >
               {translations.nav?.services || "Services"}
             </a>
             <a
-              href="#about"
-              className="text-raisin hover:text-black font-medium whitespace-nowrap"
+              onClick={() => scrollToSection("about")}
+              className="text-raisin hover:text-black font-medium whitespace-nowrap cursor-pointer"
             >
               {translations.nav?.about || "About us"}
             </a>
+          </div>
+
+          {/* Language Selector and Contact Button */}
+          <div className="hidden md:flex space-x-4 items-center">
             <Button
-              className="h-10 bg-raisin hover:bg-yellow-500 text-platinum rounded px-4"
-              onClick={scrollToContact}
+              className="h-10 bg-raisin hover:bg-yellow-500 text-platinum rounded px-8"
+              onClick={() => scrollToSection("contact")}
             >
               {translations.nav?.contact || "Contact"}
             </Button>
@@ -74,10 +78,9 @@ export function HeroSection() {
               onChange={(e) =>
                 setLanguage(e.target.value as "en" | "et" | "ru")
               }
-              className="border border-gray-300 rounded px-2"
             >
-              <option value="en">Eng</option>
-              <option value="et">Est</option>
+              <option value="en">ENG</option>
+              <option value="et">EST</option>
               {/* <option value="ru">Rus</option> */}
             </select>
           </div>
@@ -99,29 +102,42 @@ export function HeroSection() {
         {menuOpen && (
           <div className="md:hidden flex flex-col space-y-4 px-4 pb-4">
             <a
-              href="#home"
-              className="text-raisin hover:text-black font-medium"
+              onClick={() => scrollToSection("home")}
+              className="text-raisin hover:text-black font-medium cursor-pointer"
             >
               {translations.nav?.home || "Home"}
             </a>
             <a
-              href="#services"
-              className="text-raisin hover:text-black font-medium"
+              onClick={() => scrollToSection("services")}
+              className="text-raisin hover:text-black font-medium cursor-pointer"
             >
               {translations.nav?.services || "Services"}
             </a>
             <a
-              href="#about"
-              className="text-raisin hover:text-black font-medium whitespace-nowrap"
+              onClick={() => scrollToSection("about")}
+              className="text-raisin hover:text-black font-medium whitespace-nowrap cursor-pointer"
             >
               {translations.nav?.about || "About us"}
             </a>
             <Button
               className="h-10 bg-raisin text-platinum rounded hover:bg-yellow-500"
-              onClick={scrollToContact}
+              onClick={() => scrollToSection("contact")}
             >
               {translations.nav?.contact || "Contact"}
             </Button>
+            {/* Language Select Dropdown */}
+            <div className="flex justify-center mt-4">
+              <select
+                onChange={(e) =>
+                  setLanguage(e.target.value as "en" | "et" | "ru")
+                }
+                className="text-raisin"
+              >
+                <option value="en">ENG</option>
+                <option value="et">EST</option>
+                {/* <option value="ru">Russian</option> */}
+              </select>
+            </div>
           </div>
         )}
       </nav>
