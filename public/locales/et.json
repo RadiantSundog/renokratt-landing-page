@@ -36,11 +36,11 @@
     "offerings": {
       "knowledge": {
         "title": "Keskne andmehaldus",
-        "description": "Me koondame sinu hoone avaandmed ja TalTechi teadmised ühte kohta kokku, et muuta renoveerimise kavandamine tõhusamaks."
+        "description": "Me koondame ühte kohta andmed ehitisregistrist, Maa- ja Ruumiametist ning Taltechi teadmusbaasist, et muuta renoveerimise kavandamine tõhusamaks."
       },
       "data": {
         "title": "Eelanalüüsid",
-        "description": "Kasutame tehisaru ja TalTechi tööriistu, et anda prognoos, kuidas renoveeritud hoone  elanike eluolu muutma hakkab."
+        "description": "Kasutame tehisaru ja TalTechi tööriistu, et anda prognoos renoveerimise tervikmaksumuse, jooksvate kulude võrdluse ja saavutatava energiaefektiivsuse kohta."
       },
       "sales": {
         "title": "Otsustustugi",
@@ -50,10 +50,10 @@
   },
   "team": {
     "title": "Meie meeskond",
-    "subtitle": "Renokrati taga oma valdkonna eksperdid, koostöös Eesti akadeemilise tipuga",
+    "subtitle": "Toome kokku akadeemilised ekspert-teadmised ja tehnoloogilised lahendused",
     "contact": "Kontakt",
     "mentorsTitle": "Mentorid",
-    "mentorsSubtitle": "Eksperdid, kes meid teekonnal toetavad",
+    "mentorsSubtitle": "Renokratti nõustavad eksperdid tööstusest ja akadeemiast",
     "founders": [
       {
         "name": "Joosep Viik",
