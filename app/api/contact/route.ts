@@ -9,9 +9,9 @@ export async function POST(request: Request) {
 
     // Construct the message
     const msg = {
-      to: 'alexander.levero@gmail.com', // Your desired recipient
-      from: 'alexander.levero@gmail.com',  // Must be verified in your SendGrid account
-      subject: `New Contact Form Submission from ${name}`,
+      to: 'joosep.viik@taltech.ee', // Your desired recipient
+      from: 'info@renokratt.ee',  // Must be verified in your SendGrid account
+      subject: `New Contact Form Submission on Renokratt.ee from ${name}`,
       text: comment,
       html: `
         <p><strong>Name:</strong> ${name}</p>
