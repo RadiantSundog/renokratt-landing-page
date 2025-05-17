@@ -51,6 +51,20 @@ export function PartnersSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold mb-4 gradient-text">
+            In cooperation with
+          </h2>
+          <div className="flex justify-center items-center mb-8">
+            <div className="relative w-56 h-24">
+              <Image
+                src="/taltech-logo.png"
+                alt="TalTech"
+                fill
+                style={{ objectFit: "contain" }}
+                priority
+              />
+            </div>
+          </div>
+          <h2 className="text-3xl font-bold mb-4 gradient-text">
             {translations.partners?.title || "Our partners"}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
